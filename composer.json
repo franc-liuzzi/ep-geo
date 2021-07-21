@@ -1,6 +1,6 @@
 {
     "name": "franc-liuzzi/ep-geo",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "description": "Geo query integration for ElasticPress",
     "type": "library",
     "license": "MIT",
@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "Sidea\\EpGeo\\": "src/"
-        }
+        },
+        "files": [
+            "src/ep-geo.php"
+        ]
     },
     "extra": {
         "laravel": {

@@ -152,7 +152,7 @@ $rules = [
 
 $finder = Finder::create()
     ->in([
-        __DIR__ . '/config',
+        // __DIR__ . '/config',
         __DIR__ . '/src',
     ])
     ->name('*.php')

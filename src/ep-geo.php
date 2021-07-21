@@ -7,15 +7,13 @@
  * Author URI:      https://thinkshout.com/
  * Text Domain:     ep-geo
  * Domain Path:     /languages
- * Version:         0.1.0
- *
- * @package         Ep_Geo
+ * Version:         0.1.0.
  */
 
 namespace Sidea\EpGeo;
 
 /**
- * Setup all feature filters
+ * Setup all feature filters.
  */
 function ep_geo_setup()
 {
@@ -34,24 +32,24 @@ function ep_geo_setup()
 function ep_geo_config_mapping($mapping)
 {
     // Index geo_point:
-    $mapping['mappings']['post']['properties']['geo_point'] = array(
-        'properties' => array(
-            'location' => array(
+    $mapping['mappings']['post']['properties']['geo_point'] = [
+        'properties' => [
+            'location' => [
                 'type' => 'geo_point',
                 'ignore_malformed' => true,
-            ),
-        ),
-    );
+            ],
+        ],
+    ];
 
     // Index geo_shape:
-    $mapping['mappings']['post']['properties']['geo_shape'] = array(
-        'properties' => array(
-            'location' => array(
+    $mapping['mappings']['post']['properties']['geo_shape'] = [
+        'properties' => [
+            'location' => [
                 'type' => 'geo_shape',
                 'ignore_malformed' => true,
-            ),
-        ),
-    );
+            ],
+        ],
+    ];
 
     return $mapping;
 }
@@ -142,7 +140,7 @@ function ep_geo_formatted_args($formatted_args, $args)
 
     // Legacy "geo_query" filter (deprecated):
     if (isset($args['geo_query'])) {
-        $geo_distance = array();
+        $geo_distance = [];
 
         if (isset($args['geo_query']['distance'])) {
             $geo_distance['distance'] = $args['geo_query']['distance'];
@@ -159,12 +157,12 @@ function ep_geo_formatted_args($formatted_args, $args)
         $formatted_args['post_filter']['bool']['filter']['geo_distance'] = $geo_distance;
 
         if (isset($args['geo_query']['order'])) {
-            array_unshift($formatted_args['sort'], array(
-                '_geo_distance' => array(
+            array_unshift($formatted_args['sort'], [
+                '_geo_distance' => [
                     'geo_point.location' => $geo_distance['geo_point.location'],
                     'order' => $args['geo_query']['order'],
-                ),
-            ));
+                ],
+            ]);
         }
     }
 
@@ -172,26 +170,18 @@ function ep_geo_formatted_args($formatted_args, $args)
 }
 
 /**
- * Output feature box summary
+ * Output feature box summary.
  */
 function ep_geo_box_summary()
 {
-    echo '<p>' . esc_html_e('Integrate geo location data with ElasticSearch, and enable geo queries.', 'ep-geo') . '</p>';
+    echo '<p>'.esc_html_e('Integrate geo location data with ElasticSearch, and enable geo queries.', 'ep-geo').'</p>';
 }
 
 /**
- * Output feature box long
+ * Output feature box long.
  */
 function ep_geo_box_long()
 {
-    echo '<p>' . esc_html_e('By default, this plugin looks in post meta fields named "latitude" and "longitude". They should be plain text fields with lat/lon represented as floats.', 'ep-geo') . '</p>';
-    echo '<p>' . esc_html_e('If your latitude and longitude data is stored somewhere else, or if you need to calculate or preprocess the geo_point location, it\'s configurable with a WordPress hook.', 'ep-geo') . '</p>';
+    echo '<p>'.esc_html_e('By default, this plugin looks in post meta fields named "latitude" and "longitude". They should be plain text fields with lat/lon represented as floats.', 'ep-geo').'</p>';
+    echo '<p>'.esc_html_e('If your latitude and longitude data is stored somewhere else, or if you need to calculate or preprocess the geo_point location, it\'s configurable with a WordPress hook.', 'ep-geo').'</p>';
 }
-
-// ep_register_feature('ep_geo', array(
-//     'title'                     => 'Geo',
-//     'setup_cb'                  => 'ep_geo_setup',
-//     'feature_box_summary_cb'    => 'ep_geo_box_summary',
-//     'feature_box_long_cb'       => 'ep_geo_box_long',
-//     'requires_install_reindex'  => true,
-// ));
