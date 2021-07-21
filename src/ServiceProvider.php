@@ -16,9 +16,11 @@ class ServiceProvider extends BaseServiceProvider
     }
 
     public static function load_ep_geo_feature() {
+        dump('load_ep_geo_feature');
+
         if ( class_exists( '\ElasticPress\Features' ) ) {
             // Register your feature in ElasticPress.
-            dump('load_ep_geo_feature');
+            dump('load_ep_geo_feature OK');
             \ElasticPress\Features::factory()->register_feature(
                 new EpGeoFeature()
             );
