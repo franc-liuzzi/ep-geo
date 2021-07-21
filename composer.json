@@ -1,6 +1,6 @@
 {
     "name": "franc-liuzzi/ep-geo",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "Geo query integration for ElasticPress",
     "type": "library",
     "license": "MIT",
@@ -42,7 +42,7 @@
         "git:commit-tag-and-push": [
             "git add . && git commit -m 'increment version'",
             "git tag $(semver --adapter=composer get:version)",
-            "git push --tags"
+            "git push && git push --tags"
         ],
         "publish:patch": [
             "@version:increment:patch",
