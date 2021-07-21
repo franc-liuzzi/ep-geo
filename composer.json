@@ -1,6 +1,6 @@
 {
     "name": "franc-liuzzi/ep-geo",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Geo query integration for ElasticPress",
     "type": "library",
     "license": "MIT",
@@ -39,20 +39,22 @@
         "version:increment:patch": "semver --adapter=composer increment:patch",
         "version:increment:minor": "semver --adapter=composer increment:minor",
         "version:increment:major": "semver --adapter=composer increment:major",
+        "git:commit-tag-and-push": [
+            "git add . && git commit -m 'increment version'",
+            "git tag $(semver --adapter=composer get:version)",
+            "git push"
+        ],
         "publish:patch": [
             "@version:increment:patch",
-            "git add . && git commit -m 'increment version'",
-            "git tag $(semver --adapter=composer get:version)"
+            "@git:commit-tag-and-push"
         ],
         "publish:minor": [
             "@version:increment:minor",
-            "git add . && git commit -m 'increment version'",
-            "git tag $(semver --adapter=composer get:version)"
+            "@git:commit-tag-and-push"
         ],
         "publish:major": [
             "@version:increment:major",
-            "git add . && git commit -m 'increment version'",
-            "git tag $(semver --adapter=composer get:version)"
+            "@git:commit-tag-and-push"
         ]
     }
 }
