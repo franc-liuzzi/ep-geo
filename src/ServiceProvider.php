@@ -13,15 +13,6 @@ class ServiceProvider extends BaseServiceProvider
             [__CLASS__, 'load_ep_geo_feature'],
             11
         );
-
-        ep_register_feature('ep_geo', array(
-            'title'                     => 'Geo',
-            'setup_cb'                  => __NAMESPACE__ . '\ep_geo_setup',
-            'feature_box_summary_cb'    => __NAMESPACE__ . '\ep_geo_box_summary',
-            'feature_box_long_cb'       => __NAMESPACE__ . '\ep_geo_box_long',
-            'requires_install_reindex'  => true,
-        ));
-        
     }
 
     public static function load_ep_geo_feature() {
