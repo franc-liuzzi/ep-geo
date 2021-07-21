@@ -1,13 +1,57 @@
 {
-    "name": "thinkshout/ep-geo",
+    "name": "franc-liuzzi/ep-geo",
+    "version": "0.1.1",
     "description": "Geo query integration for ElasticPress",
-    "type": "wordpress-plugin",
+    "type": "library",
     "license": "GPLv2",
     "authors": [
         {
             "name": "Jaymz Rhime",
             "email": "wxactly@gmail.com"
+        },
+        {
+            "name": "Francesco Liuzzi",
+            "email": "francesco.liuzzi@sideagroup.com"
         }
     ],
-    "require": {}
+    "require": {
+        "illuminate/support": "^8.51"
+    },
+    "require-dev": {
+        "phlak/semver-cli": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sidea\\EpGeo\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sidea\\EpGeo\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "fix": "php-cs-fixer fix --config .php_cs.laravel.php",
+        "version:increment:patch": "semver --adapter=composer increment:patch",
+        "version:increment:minor": "semver --adapter=composer increment:minor",
+        "version:increment:major": "semver --adapter=composer increment:major",
+        "publish:patch": [
+            "@version:increment:patch",
+            "git add . && git commit -m 'increment version'",
+            "git tag $(semver --adapter get:version)"
+        ],
+        "publish:minor": [
+            "@version:increment:minor",
+            "git add . && git commit -m 'increment version'",
+            "git tag $(semver --adapter get:version)"
+        ],
+        "publish:major": [
+            "@version:increment:major",
+            "git add . && git commit -m 'increment version'",
+            "git tag $(semver --adapter get:version)"
+        ]
+    }
 }
