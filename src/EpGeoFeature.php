@@ -19,6 +19,7 @@ class EpGeoFeature extends Feature {
 		// ];
 
 		parent::__construct();
+		dump('__construct');
 	}
 
 	/**
