@@ -1,6 +1,6 @@
 {
     "name": "franc-liuzzi/ep-geo",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "Geo query integration for ElasticPress",
     "type": "library",
     "license": "MIT",
@@ -15,7 +15,8 @@
         }
     ],
     "require": {
-        "illuminate/support": "^8.51"
+        "illuminate/support": "^8.51",
+        "10up/elasticpress": "^3.6"
     },
     "require-dev": {
         "phlak/semver-cli": "^1.0",

@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "740d08e70a20d337bdcc6d943eab5426",
+    "content-hash": "c21981c43ce318e9fcd127b53af2d5bf",
     "packages": [
+        {
+            "name": "10up/elasticpress",
+            "version": "3.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10up/ElasticPress.git",
+                "reference": "c362484fecdb502a983b88177dedf94c091d7b8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10up/ElasticPress/zipball/c362484fecdb502a983b88177dedf94c091d7b8c",
+                "reference": "c362484fecdb502a983b88177dedf94c091d7b8c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "10up/phpcs-composer": "dev-master",
+                "10up/wpacceptance": "dev-master",
+                "phpunit/phpunit": "^7",
+                "wpackagist-plugin/woocommerce": "*"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "vendor/{$name}/": [
+                        "type:wordpress-plugin",
+                        "type:wordpress-theme"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Lovett",
+                    "email": "taylorl@get10up.com"
+                },
+                {
+                    "name": "10up",
+                    "homepage": "http://10up.com"
+                },
+                {
+                    "name": "Aaron Holbrook",
+                    "email": "aaron@10up.com",
+                    "homepage": "http://aaronjholbrook.com"
+                }
+            ],
+            "description": "Supercharge WordPress with Elasticsearch.",
+            "keywords": [
+                "elasticpress",
+                "elasticsearch",
+                "plugin",
+                "search",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/10up/ElasticPress/issues",
+                "source": "https://github.com/10up/ElasticPress/tree/3.6.1"
+            },
+            "time": "2021-07-15T14:18:25+00:00"
+        },
         {
             "name": "doctrine/inflector",
             "version": "2.0.3",
