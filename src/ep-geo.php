@@ -17,9 +17,9 @@ namespace Sidea\EpGeo;
  */
 function ep_geo_setup()
 {
-    add_filter('ep_config_mapping', 'ep_geo_config_mapping');
-    add_filter('ep_post_sync_args', 'ep_geo_post_sync_args', 10, 2);
-    add_filter('ep_formatted_args', 'ep_geo_formatted_args', 10, 2);
+    add_filter('ep_config_mapping', '\Sidea\EpGeo\ep_geo_config_mapping');
+    add_filter('ep_post_sync_args', '\Sidea\EpGeo\ep_geo_post_sync_args', 10, 2);
+    add_filter('ep_formatted_args', '\Sidea\EpGeo\ep_geo_formatted_args', 10, 2);
 }
 
 /**
