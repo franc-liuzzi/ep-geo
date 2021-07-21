@@ -1,6 +1,6 @@
 {
     "name": "franc-liuzzi/ep-geo",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "description": "Geo query integration for ElasticPress",
     "type": "library",
     "license": "MIT",

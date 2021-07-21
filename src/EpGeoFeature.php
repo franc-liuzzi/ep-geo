@@ -16,12 +16,8 @@ class EpGeoFeature extends Feature
         $this->title = esc_html__('Geo', 'plugin-text-domain');
 
         $this->requires_install_reindex = true;
-        // $this->default_settings         = [
-        // 	'my_feature_setting' => '',
-        // ];
 
         parent::__construct();
-        dump('__construct');
     }
 
     /**
