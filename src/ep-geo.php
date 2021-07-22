@@ -32,7 +32,7 @@ function ep_geo_setup()
 function ep_geo_config_mapping($mapping)
 {
     // Index geo_point:
-    $mapping['mappings']['post']['properties']['geo_point'] = [
+    $mapping['mappings']['properties']['geo_point'] = [
         'properties' => [
             'location' => [
                 'type' => 'geo_point',
@@ -42,7 +42,7 @@ function ep_geo_config_mapping($mapping)
     ];
 
     // Index geo_shape:
-    $mapping['mappings']['post']['properties']['geo_shape'] = [
+    $mapping['mappings']['properties']['geo_shape'] = [
         'properties' => [
             'location' => [
                 'type' => 'geo_shape',
